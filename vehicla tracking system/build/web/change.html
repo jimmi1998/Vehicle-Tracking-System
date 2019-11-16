@@ -1,0 +1,32 @@
+<html> <head>
+	<link rel="stylesheet" href="css/style.css">
+	<title> Change Owners' Details </title>
+</head> <script language="javascript">
+function check()
+{
+if(document.form1.rno.value=="")
+{
+alert("Register number not entered !");
+document.form1.rno.focus();
+return;
+}
+document.form1.submit();
+}
+// -->
+</script>
+<body> <form name=form1 method=post 
+action = "CHANGE.jsp">
+<center>
+<h1> Change of Owners' details </h1>
+<font color=Blue size=4> Enter Register Number <br>
+<input type=text name=rno> <br>
+<input type=button value="Go" onClick="check()">
+<hr>
+If your Vehicle is not yet registered, 
+<a href="newreg.html">
+Register here </a><br>
+Forgot Register Number 
+<a href="forgot.html"> click here </a>
+</html>
+
+

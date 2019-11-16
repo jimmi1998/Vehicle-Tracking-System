@@ -1,0 +1,23 @@
+<html> <link rel="stylesheet" href="css/style.css"><title> Forgot register number </title>
+<script language="javascript">
+function check()
+{
+if(document.form1.vno.value=="")
+{
+alert("Vehicle number must be entered");
+document.form1.vno.focus();
+return;
+}
+document.form1.submit();
+}
+</script>
+<body>
+<h1>Vehicle Investigation System - recollect register number</h1>
+<form name=form1 method=post 
+action="FORGOT.jsp">
+<center><font color=blue size=5>
+Enter Vehicle number<br>
+<input type=text name=vno><br>
+<input type=button value="Go" onClick="check()">
+</body>
+</html>

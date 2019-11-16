@@ -1,0 +1,109 @@
+<html><link rel="stylesheet" href="css/style.css">
+<title> CARD Project - New Vehicle Registration</title> 
+<script language="javascript">
+
+//document.form1.vno.focus();
+
+function check()
+{
+if(document.form1.vno.value=="") 
+{ alert("Vehicle number should be furnished");
+  document.form1.vno.focus(); 
+return;
+}
+if(document.form1.model.value=="") 
+{ alert("Vehicle model should be furnished");
+ document.form1.model.focus();
+return; }
+
+if(document.form1.oname.value=="") 
+{  alert("Owner name should be furnished");
+   document.form1.oname.focus(); 
+return;}
+
+if(document.form1.email.value=="") 
+{   alert("Owners email not furnished ! ");
+    document.form1.email.focus(); 
+   return;}
+if(document.form1.phone.value=="") 
+{   alert("Phone number missing! ");
+    document.form1.phone.focus(); 
+         return; }
+if(document.form1.rtono.value=="") 
+{ alert("Vehicle RTO number not mentioned ");
+document.form1.rtono.focus(); 
+return; }
+
+if(isNaN(document.form1.phone.value))
+{
+alert("Invalid phone number. Remove extra characters");
+document.form1.phone.focus();
+return;
+}
+
+mail=document.form1.email.value;
+for(i=0;i<mail.length;i++)
+{
+if(mail.charAt(i)=='@')
+{
+m1=mail.substring(0,i);
+m2=mail.substring(i+1,mail.length);
+}
+}
+
+for(i=0;i<m1.length;i++)
+{
+if((m1.charAt(i)=='.')||(m1.charAt(i)==' '))
+{
+alert("Wrong e-mail id. Retype");
+return;
+}
+}
+
+for(i=0;i<m2.length;i++)
+{
+if((m2.charAt(i)==' ')||(m2.charAt(i)=='@'))
+{
+alert("Wrong e-mail id. Retype");
+return;
+}
+}
+
+document.form1.submit();
+}
+</script>
+
+<body>
+<center> <font color = BLUE >
+	<h1>New Vehicle Registration Form </h1><hr></font>
+	</center>
+<form name=form1 action="JSP1.jsp"  method=post>
+<table>
+<tr> <td> <font color=red size=5>
+	Enter Vehicle Details:</font> </td> <td></td> </tr>
+<tr>   <td> Vehicle Number </td>
+       <td> <input type=text name=vno> </td>
+<tr>   <td> Number of wheels </td>
+       <td> <select name=wheels > <option>2 <option>3
+            <option>4 <option>6  </select > </td>
+<tr>   <td> Vehicle type/model </td>
+       <td> <input type = text name=model> </td>
+<tr>   <td> RTO number </td> 
+       <td> <input type=text name=rtono></td> </tr>
+<tr> <td> <font color=red size=5>
+	Enter Owners Details: </font></td> <td></td> </tr>
+<tr>  <td> Owner's Name </td>
+       <td> <input type=text name=oname> </td>
+<tr>   <td> Owner's E-mail id </td>
+       <td> <input type=text name=email> </td>
+<tr> <td> Owner's Phone number </td>
+      <td> <input type=text name=phone> </td>
+<tr> <td> Owner's address </td>
+       <td> <textarea cols=25 rows=8 name=addr> </textarea></td>
+</tr>
+</table><p>
+<center> 
+<input type=button Value="Register" onClick="check()">
+	<input type=Reset></center>
+</form>
+	</body></html>

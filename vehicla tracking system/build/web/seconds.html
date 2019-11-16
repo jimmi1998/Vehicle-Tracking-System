@@ -1,0 +1,136 @@
+<html> <head>
+	<link rel="stylesheet" href="css/style.css">
+<title> CARD Project -  Check Vehicle status before you buy </title>
+</head> <script language="javascript">
+
+function check()
+{
+if(document.form1.vno.value=="")
+{
+alert("Vehicle Number not entered ");
+document.form1.vno.focus();
+return;
+}
+ 
+if(document.form1.model.value=="")
+{
+alert("model not entered ");
+document.form1.model.focus();
+return;
+}
+if(document.form1.oname.value=="")
+{
+alert("Owners name not entered ");
+document.form1.oname.focus();
+return;
+}
+if(document.form1.email.value=="")
+{
+alert("E-mail not entered ");
+document.form1.email.focus();
+return;
+}
+if(document.form1.phone.value=="")
+{
+alert("Phone number not entered ");
+document.form1.phone.focus();
+return;
+}
+
+
+if(isNaN(document.form1.phone.value))
+{
+alert("Invalid Phone number ");
+document.form1.phone.focus();
+return;
+}
+ 
+
+
+
+if(document.form1.addr.value=="")
+{
+alert("Address not entered ");
+document.form1.addr.focus();
+return;
+}
+
+if(document.form1.uname.value=="")
+{
+alert("Your name not entered ");
+document.form1.uname.focus();
+return;
+}
+
+if(document.form1.uemail.value=="")
+{
+alert("Your email id not entered ");
+document.form1.uemail.focus();
+return;
+}
+
+if(document.form1.uphone.value=="")
+{
+alert("Your phone number not entered ");
+document.form1.uphone.focus();
+return;
+}
+if(isNaN(document.form1.uphone.value))
+{
+alert("Invalid Phone number ");
+document.form1.uphone.focus();
+return;
+}
+
+
+if(document.form1.uaddr.value=="")
+{
+alert("Your address not entered ");
+document.form1.uaddr.focus();
+return;
+}
+document.form1.submit();
+}
+</script><body>
+<form name=form1 method=post action="SECONDS.jsp">
+ 
+ <center> <font color = BLUE >
+	 <h1>Check Vehicle status before you buy </h1><hr></font>
+</center>
+<table>
+<tr>   <td> Enter Vehicle Number </td>
+       <td> <input type=text name=vno> </td>
+<tr>   <td> Enter Number of wheels </td>
+       <td> <select name=wheels > <option>2 <option>3
+            <option>4 <option>6  </select > </td>
+<tr>   <td> Enter Vehicle type/model </td>
+       <td> <input type = text name=model> </td>
+<tr> <td> <font color=Red> Enter Current 
+	Owner's Details </font></td> <td> </td> 
+<tr>  <td> Owner's Name </td>
+       <td> <input type=text name=oname> </td>
+<tr>   <td> Owner's E-mail id </td>
+       <td> <input type=text name=email> </td>
+<tr> <td> Owner's Phone number </td>
+      <td> <input type=text name=phone> </td>
+<tr> <td> Owner's address for communication </td>
+       <td> <textarea rows=10 cols=25 name=addr> </textarea>  </td>
+ </tr>
+	<td> <font color=Red> Please furnish your details </font></td> <td> </td> 
+<tr>  <td> Your Name </td>
+       <td> <input type=text name=uname> </td>
+<tr>   <td> Your E-mail id </td>
+       <td> <input type=text name=uemail> </td>
+<tr> <td> Your Phone number </td>
+      <td> <input type=text name=uphone> </td>
+<tr> <td> Your address for communication </td>
+       <td> <textarea rows=10 cols=25 name=uaddr></textarea>  </td>
+ </tr>
+</table><p>
+<center> 
+<input type=button Value="Check" onClick="check()">
+<input type=Reset>
+
+<br>
+	</center></p></form></body>
+</html>

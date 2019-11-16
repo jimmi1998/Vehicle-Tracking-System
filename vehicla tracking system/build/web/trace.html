@@ -1,0 +1,29 @@
+<html> 
+	<link rel="stylesheet" href="css/style.css">
+	<title> CARD Project - Stolen Vehicle Tracing 
+</title> <script language="javascript">
+function check()
+{
+if(document.form1.rno.value=="")
+{
+alert("Register number not entered !");
+document.form1.rno.focus();
+return;
+}
+document.form1.submit();
+}
+</script>
+<body> <form name=form1 method=post
+action="TRACE.jsp">
+<center> <font color = BLUE >
+<h1>Stolen Vehicle Tracing </h1><hr>
+Enter your Vehicle Registration Number <br>
+<input type=text name=rno> <br>
+<input type=button value="Go" onClick="check()">
+<hr>
+ 
+Forgot Register Number 
+<a href="forgot.html"> click here </a>
+	</font></center></form></body>
+	</html>
+ 

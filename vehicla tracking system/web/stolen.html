@@ -1,0 +1,97 @@
+<html>
+	<link rel="stylesheet" href="css/style.css">
+<title> CARD Project - Stolen Vehicle Registration
+</title> 
+<script language="javascript">
+function check()
+{
+flag=0;
+day=document.form1.day.value;
+month=document.form1.month.value;
+year=document.form1.year.value;
+
+var d= new Date(); 
+myd=  d.getDate();
+mym= d.getMonth();
+myy= d.getYear();
+
+mym = mym+1;
+myy= myy+1900;
+ 
+if(document.form1.rno.value == "")
+{
+alert("Type Registration number ");
+document.form1.rno.focus();
+return; 
+}
+
+if(document.form1.day.value == "")
+{
+alert("Type Day  number ");
+document.form1.day.focus();
+return; 
+}
+
+if(document.form1.month.value == "")
+{
+alert("Type Month number ");
+document.form1.month.focus();
+return; 
+}
+
+if(document.form1.year.value == "")
+{
+alert("Type Year  number ");
+document.form1.year.focus();
+return; 
+}
+
+
+if(month<1 ||  month>12) flag=1;
+
+if(day>31 || year>myy) flag=1;
+
+if(year==myy &&   month>mym) flag=1;
+
+if(year==myy && month==mym && day>myd) flag=1;
+
+if((year%4==0 && year%100!=0) || year%400 == 0) 
+{
+if(day>29) flag=1;
+} else  {     if(day>28) flag=1;    }
+
+if(flag==1)
+{
+alert("Date Not correct");
+return;
+}
+
+
+document.form1.submit();
+}
+</script>
+<body>
+
+<center> <font color = BLUE >
+<h1>Stolen Vehicle Registration Form </h1><hr>
+ 
+<form name=form1 method=post action="STOLEN.jsp">
+
+Enter your Vehicle Registration Number <br>
+<input type=text name=rno> <br>
+Enter date of theft:<br>
+Day :<input type=text name=day SIZE = 2 MAXLENGTH=2 >
+Month <input type=text name=month SIZE = 2 MAXLENGTH=2>
+Year <input type=text name=year SIZE = 4 MAXLENGTH=4><br>
+<input type=button  value="Go"
+onClick="check()">
+<hr>
+If your Vehicle is not yet registered, 
+<a href="newreg.html">
+Register here </a><br>
+Forgot Register Number 
+<a href="forgot.html"> click here </a>
+	</form></font></center>
+</body>
+</html>
+ 
